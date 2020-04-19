@@ -1,0 +1,22 @@
+{
+  "name": "banorte-email-scraper",
+  "version": "1.0.0",
+  "description": "A package for scraping banorte emails.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "banorte",
+    "email",
+    "parser"
+  ],
+  "author": "ramomar",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^25.3.0"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3"
+  }
+}
