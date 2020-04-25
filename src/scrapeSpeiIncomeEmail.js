@@ -8,7 +8,7 @@ function scrapeSpeiIncomeEmail(fields) {
   const operationData = sanitizedNote.split(' ');
 
   return {
-    type: 'income',
+    movementType: 'income',
     kind: 'spei',
     note: sanitizedNote,
     operationDate: `${operationData[10]} ${operationData[13]}`,

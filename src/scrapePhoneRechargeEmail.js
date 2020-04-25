@@ -3,7 +3,7 @@ const extractAmount = require('./extractAmount');
 
 function scrapePhoneRechargeEmail(fields) {
   return {
-    type: 'expense',
+    movementType: 'expense',
     kind: 'phone_recharge',
     note: fields[4],
     operationDate: `${fields[6]} ${fields[8]}`,

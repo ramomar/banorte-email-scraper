@@ -7,7 +7,7 @@ test('scrapeDepositEmail', () => {
   const actual = scrapeDepositEmail(htmlEmail);
 
   expect(actual).toStrictEqual({
-    type: 'expense',
+    movementType: 'expense',
     kind: 'deposit',
     note: 'Instrucción de Depósito | Pago del cine',
     amount: '792.00',

@@ -7,7 +7,7 @@ test('scrapeFastTransferEmail', async () => {
   const actual = scrapeFastTransferEmail(htmlEmail);
 
   expect(actual).toStrictEqual({
-    type: 'expense',
+    movementType: 'expense',
     kind: 'fast_transfer',
     note: 'Transferencias Rápidas | Open source | hola@github.com',
     operationDate: '03/Ago/2019 11:13:14 horas',

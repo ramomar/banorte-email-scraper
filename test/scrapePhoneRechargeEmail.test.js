@@ -7,7 +7,7 @@ test('scrapePhoneRechargeEmail', () => {
   const actual = scrapePhoneRechargeEmail(htmlEmail);
 
   expect(actual).toStrictEqual({
-    type: 'expense',
+    movementType: 'expense',
     kind: 'phone_recharge',
     note: 'Compra de Tiempo Aire/Paquetes Sin Límite',
     operationDate: '01/Oct/2019 15:08:52 horas',
