@@ -8,7 +8,7 @@ test('scrapePhoneRechargeEmail', () => {
 
   expect(actual).toStrictEqual({
     movementType: 'expense',
-    kind: 'phone_recharge',
+    emailType: 'phone_recharge',
     note: 'Compra de Tiempo Aire/Paquetes Sin Límite',
     operationDate: '01/Oct/2019 15:08:52 horas',
     amount: '200.00',

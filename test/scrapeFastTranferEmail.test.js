@@ -8,7 +8,7 @@ test('scrapeFastTransferEmail', async () => {
 
   expect(actual).toStrictEqual({
     movementType: 'expense',
-    kind: 'fast_transfer',
+    emailType: 'fast_transfer',
     note: 'Transferencias Rápidas | Open source | hola@github.com',
     operationDate: '03/Ago/2019 11:13:14 horas',
     amount: '806.00',

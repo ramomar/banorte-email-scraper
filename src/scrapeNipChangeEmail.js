@@ -3,7 +3,7 @@ const makeBanorteEmailScraper = require('./makeBanorteEmailScraper');
 function scrapeNipChangeEmail(fields) {
   return {
     movementType: 'account_operation',
-    kind: 'nip_change',
+    emailType: 'nip_change',
     note: fields[12],
     operationDate: fields[4],
     channel: {

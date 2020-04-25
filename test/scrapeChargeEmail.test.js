@@ -8,13 +8,13 @@ test('scrapeChargeEmail', () => {
 
   expect(actual).toStrictEqual({
     movementType: 'expense',
-    kind: 'charge',
+    emailType: 'charge',
     note: 'COMPRA EN UBER TRIP HELP.UBER.CO',
     amount: '63.37',
     operationDate: '10/Feb 08:14:03 hrs.',
     applicationDate: '10/Feb/2020',
     channel: {
-      kind: 'TPV(COMPRA COMERCIO)'
+      emailType: 'TPV(COMPRA COMERCIO)'
     }
   });
 });

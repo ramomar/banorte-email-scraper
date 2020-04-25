@@ -3,7 +3,7 @@ const makeBanorteEmailScraper = require('./makeBanorteEmailScraper');
 function scrapeIdentificationEmail(fields) {
   return {
     movementType: 'account_operation',
-    kind: 'identification',
+    emailType: 'identification',
     note: fields[5],
     operationDate: fields[17]
   };

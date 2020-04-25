@@ -8,12 +8,12 @@ test('scrapeCashWithdrawalEmail', () => {
 
   expect(actual).toStrictEqual({
     movementType: 'expense',
-    kind: 'cash_withdrawal',
+    emailType: 'cash_withdrawal',
     note: 'RETIRO DE EFECTIVO',
     operationDate: '04/Oct/2019 14:26:15 horas',
     applicationDate: '04/Oct/2019',
     channel: {
-      kind: 'Cajero Banorte',
+      emailType: 'Cajero Banorte',
       details: {
         name: 'CAJERO EN ALGUN LUGAR',
         location: 'UNA CIUDAD'

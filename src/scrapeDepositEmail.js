@@ -4,7 +4,7 @@ const extractAmount = require('./extractAmount');
 function scrapeDepositEmail(fields) {
   return {
     movementType: 'expense',
-    kind: 'deposit',
+    emailType: 'deposit',
     note: `${fields[4]} | ${fields[18]}`,
     operationDate: `${fields[6]} ${fields[8]}`,
     amount: extractAmount(fields[16]),
