@@ -1,7 +1,6 @@
 const cheerio = require('cheerio');
 
 function scrapeSpeiIncomeEmail(fields) {
-
   const sanitizedNote = fields[6]
     .replace(/\n/g, ' ')
     .replace(/\s+/g, ' ');
