@@ -1,0 +1,9 @@
+const ACCOUNT_OPERATION = 'ACCOUNT_OPERATION';
+const EXPENSE = 'EXPENSE';
+const INCOME = 'INCOME';
+
+module.exports = {
+  ACCOUNT_OPERATION,
+  EXPENSE,
+  INCOME
+};

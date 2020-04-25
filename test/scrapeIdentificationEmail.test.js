@@ -7,7 +7,7 @@ test('scrapeIdentificationEmail', () => {
   const actual = scrapeIdentificationEmail(htmlEmail);
 
   expect(actual).toStrictEqual({
-    movementType: 'account_operation',
+    movementType: 'ACCOUNT_OPERATION',
     emailType: 'IDENTIFICATION',
     note: 'Identificacion',
     operationDate: '17/12/2019 13:58',

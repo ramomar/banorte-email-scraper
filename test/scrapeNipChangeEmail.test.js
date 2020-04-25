@@ -7,7 +7,7 @@ test('scrapeNipChangeEmail', () => {
   const actual = scrapeNipChangeEmail(htmlEmail);
 
   expect(actual).toStrictEqual({
-    movementType: 'account_operation',
+    movementType: 'ACCOUNT_OPERATION',
     emailType: 'NIP_CHANGE',
     note: 'CAMBIO DE NIP',
     operationDate: '14/Nov 20:41:13 hrs.',

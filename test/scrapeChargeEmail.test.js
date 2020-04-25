@@ -7,7 +7,7 @@ test('scrapeChargeEmail', () => {
   const actual = scrapeChargeEmail(htmlEmail);
 
   expect(actual).toStrictEqual({
-    movementType: 'expense',
+    movementType: 'EXPENSE',
     emailType: 'CHARGE',
     note: 'COMPRA EN UBER TRIP HELP.UBER.CO',
     amount: '63.37',
