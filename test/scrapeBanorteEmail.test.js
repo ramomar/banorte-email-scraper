@@ -8,7 +8,7 @@ describe('scrapeBanorteEmail', () => {
 
     const actual = scrapeBanorteEmail(htmlEmail);
 
-    expect(actual).toEqual({
+    expect(actual).toMatchObject({
       emailType: emailTypes.ACCOUNT_INFO
     });
   });
@@ -18,7 +18,7 @@ describe('scrapeBanorteEmail', () => {
 
     const actual = scrapeBanorteEmail(htmlEmail);
 
-    expect(actual).toEqual({
+    expect(actual).toMatchObject({
       emailType: emailTypes.CASH_WITHDRAWAL
     });
   });
@@ -28,7 +28,7 @@ describe('scrapeBanorteEmail', () => {
 
     const actual = scrapeBanorteEmail(htmlEmail);
 
-    expect(actual).toEqual({
+    expect(actual).toMatchObject({
       emailType: emailTypes.CHARGE
     });
   });
@@ -38,7 +38,7 @@ describe('scrapeBanorteEmail', () => {
 
     const actual = scrapeBanorteEmail(htmlEmail);
 
-    expect(actual).toEqual({
+    expect(actual).toMatchObject({
       emailType: emailTypes.DEPOSIT
     });
   });
@@ -48,7 +48,7 @@ describe('scrapeBanorteEmail', () => {
 
     const actual = scrapeBanorteEmail(htmlEmail);
 
-    expect(actual).toEqual({
+    expect(actual).toMatchObject({
       emailType: emailTypes.FAST_TRANSFER
     });
   });
@@ -58,7 +58,7 @@ describe('scrapeBanorteEmail', () => {
 
     const actual = scrapeBanorteEmail(htmlEmail);
 
-    expect(actual).toEqual({
+    expect(actual).toMatchObject({
       emailType: emailTypes.IDENTIFICATION
     });
   });
@@ -68,7 +68,7 @@ describe('scrapeBanorteEmail', () => {
 
     const actual = scrapeBanorteEmail(htmlEmail);
 
-    expect(actual).toEqual({
+    expect(actual).toMatchObject({
       emailType: emailTypes.LIMIT_MODIFICATION
     });
   });
@@ -78,7 +78,7 @@ describe('scrapeBanorteEmail', () => {
 
     const actual = scrapeBanorteEmail(htmlEmail);
 
-    expect(actual).toEqual({
+    expect(actual).toMatchObject({
       emailType: emailTypes.NIP_CHANGE
     });
   });
@@ -88,7 +88,7 @@ describe('scrapeBanorteEmail', () => {
 
     const actual = scrapeBanorteEmail(htmlEmail);
 
-    expect(actual).toEqual({
+    expect(actual).toMatchObject({
       emailType: emailTypes.PHONE_RECHARGE
     });
   });
@@ -98,7 +98,7 @@ describe('scrapeBanorteEmail', () => {
 
     const actual = scrapeBanorteEmail(htmlEmail);
 
-    expect(actual).toEqual({
+    expect(actual).toMatchObject({
       emailType: emailTypes.SPEI_INCOME
     });
   });
