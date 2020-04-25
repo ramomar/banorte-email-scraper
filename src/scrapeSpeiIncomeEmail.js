@@ -10,7 +10,7 @@ function scrapeSpeiIncomeEmail(fields) {
 
   return {
     movementType: 'income',
-    emailType: emailTypes.SPEI,
+    emailType: emailTypes.SPEI_INCOME,
     note: sanitizedNote,
     operationDate: `${operationData[10]} ${operationData[13]}`,
     amount: parseFloat(operationData[7].replace(',', '')).toFixed(2)
