@@ -8,7 +8,7 @@ test('scrapeAccountInfoEmail', () => {
 
   expect(actual).toStrictEqual({
     movementType: 'account_operation',
-    emailType: 'account_info',
+    emailType: 'ACCOUNT_INFO',
     note: 'Informacion de tu Cuenta',
     operationDate: '17/12/2019 13:58'
   });

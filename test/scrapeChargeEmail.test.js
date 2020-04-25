@@ -8,7 +8,7 @@ test('scrapeChargeEmail', () => {
 
   expect(actual).toStrictEqual({
     movementType: 'expense',
-    emailType: 'charge',
+    emailType: 'CHARGE',
     note: 'COMPRA EN UBER TRIP HELP.UBER.CO',
     amount: '63.37',
     operationDate: '10/Feb 08:14:03 hrs.',

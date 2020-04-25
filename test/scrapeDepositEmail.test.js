@@ -8,7 +8,7 @@ test('scrapeDepositEmail', () => {
 
   expect(actual).toStrictEqual({
     movementType: 'expense',
-    emailType: 'deposit',
+    emailType: 'DEPOSIT',
     note: 'Instrucción de Depósito | Pago del cine',
     amount: '792.00',
     operationDate: '31/Oct/2019 13:41:03 horas',

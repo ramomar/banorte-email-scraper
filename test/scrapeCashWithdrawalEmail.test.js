@@ -8,7 +8,7 @@ test('scrapeCashWithdrawalEmail', () => {
 
   expect(actual).toStrictEqual({
     movementType: 'expense',
-    emailType: 'cash_withdrawal',
+    emailType: 'CASH_WITHDRAWAL',
     note: 'RETIRO DE EFECTIVO',
     operationDate: '04/Oct/2019 14:26:15 horas',
     applicationDate: '04/Oct/2019',

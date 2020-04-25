@@ -1,4 +1,5 @@
 const cheerio = require('cheerio');
+const emailTypes = require('./emailTypes');
 
 function scrapeSpeiIncomeEmail(fields) {
   const sanitizedNote = fields[6]
@@ -9,7 +10,7 @@ function scrapeSpeiIncomeEmail(fields) {
 
   return {
     movementType: 'income',
-    emailType: 'spei',
+    emailType: emailTypes.SPEI,
     note: sanitizedNote,
     operationDate: `${operationData[10]} ${operationData[13]}`,
     amount: parseFloat(operationData[7].replace(',', '')).toFixed(2)

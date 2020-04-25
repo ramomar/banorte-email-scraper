@@ -1,10 +1,11 @@
 const makeBanorteEmailScraper = require('./makeBanorteEmailScraper');
+const emailTypes = require('./emailTypes');
 const extractAmount = require('./extractAmount');
 
 function scrapeCashWithdrawalEmail(fields) {
   return {
     movementType: 'expense',
-    emailType: 'cash_withdrawal',
+    emailType: emailTypes.CASH_WITHDRAWAL,
     note: fields[3],
     operationDate: fields[5],
     applicationDate: fields[7],

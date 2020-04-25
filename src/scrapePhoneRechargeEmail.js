@@ -1,10 +1,11 @@
 const makeBanorteEmailScraper = require('./makeBanorteEmailScraper');
+const emailTypes = require('./emailTypes');
 const extractAmount = require('./extractAmount');
 
 function scrapePhoneRechargeEmail(fields) {
   return {
     movementType: 'expense',
-    emailType: 'phone_recharge',
+    emailType: emailTypes.PHONE_RECHARGE,
     note: fields[4],
     operationDate: `${fields[6]} ${fields[8]}`,
     amount: extractAmount(fields[18]),

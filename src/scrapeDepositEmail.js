@@ -1,10 +1,11 @@
 const makeBanorteEmailScraper = require('./makeBanorteEmailScraper');
+const emailTypes = require('./emailTypes');
 const extractAmount = require('./extractAmount');
 
 function scrapeDepositEmail(fields) {
   return {
     movementType: 'expense',
-    emailType: 'deposit',
+    emailType: emailTypes.DEPOSIT,
     note: `${fields[4]} | ${fields[18]}`,
     operationDate: `${fields[6]} ${fields[8]}`,
     amount: extractAmount(fields[16]),

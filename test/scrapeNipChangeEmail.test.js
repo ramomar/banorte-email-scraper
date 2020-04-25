@@ -8,7 +8,7 @@ test('scrapeNipChangeEmail', () => {
 
   expect(actual).toStrictEqual({
     movementType: 'account_operation',
-    emailType: 'nip_change',
+    emailType: 'NIP_CHANGE',
     note: 'CAMBIO DE NIP',
     operationDate: '14/Nov 20:41:13 hrs.',
     channel: {
