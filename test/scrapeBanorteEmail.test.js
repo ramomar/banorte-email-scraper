@@ -106,6 +106,6 @@ describe('scrapeBanorteEmail', () => {
   it('should throw when a scraper has not been implemented', () => {
     const makeActual = () => scrapeBanorteEmail('<a></a>');
 
-    expect(makeActual).toThrow();
+    expect(makeActual).toThrow('Scraper not implemented.');
   });
 });
