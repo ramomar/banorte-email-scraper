@@ -7,7 +7,7 @@ function scrapeFastTransferEmail(fields) {
   return {
     movementType: movementTypes.EXPENSE,
     emailType: emailTypes.FAST_TRANSFER,
-    note: `${fields[4]} | ${fields[32]} | ${fields[24]}`,
+    note: [fields[4], fields[32], fields[24]].join(' | '),
     operationDate: `${fields[6]} ${fields[8]}`,
     amount: extractAmount(fields[28]),
     bank: fields[26],
