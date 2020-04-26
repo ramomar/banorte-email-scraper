@@ -143,6 +143,16 @@ describe('scrapeBanorteEmail', () => {
     });
   });
 
+  it(`should be able to identify and scrape data from a ${emailTypes.SPEI_DEVOLUTION} email`, () => {
+    const htmlEmail = fs.readFileSync('./test/emails/spei-devolution-email.html').toString();
+
+    const actual = scrapeBanorteEmail(htmlEmail);
+
+    expect(actual).toMatchObject({
+      emailType: emailTypes.SPEI_DEVOLUTION
+    });
+  });
+
   it('should throw if there are multiple matches', () => {
     const makeActual = () => scrapeBanorteEmail('Multiple matches: CASH_WITHDRAWAL, CHARGE, SPEI_INCOME.');
 
