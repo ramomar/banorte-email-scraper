@@ -1,8 +1,50 @@
-const scrapers = require('.');
+const scrapeChargeEmail = require('./scrapeChargeEmail');
+const scrapeNipChangeEmail = require('./scrapeNipChangeEmail');
+const scrapeAccountInfoEmail = require('./scrapeAccountInfoEmail');
+const scrapeCashWithdrawalEmail = require('./scrapeCashWithdrawalEmail');
+const scrapeDepositEmail = require('./scrapeDepositEmail');
+const scrapeIdentificationEmail = require('./scrapeIdentificationEmail');
+const scrapeSpeiIncomeEmail = require('./scrapeSpeiIncomeEmail');
+const scrapeLimitModificationEmail = require('./scrapeLimitModificationEmail');
+const scrapeFastTransferEmail = require('./scrapeFastTransferEmail');
+const scrapePhoneRechargeEmail = require('./scrapePhoneRechargeEmail');
 const emailTypes = require('./emailTypes');
 
+const matchers = [
+  [emailTypes.ACCOUNT_INFO, (rawHtml) => rawHtml.includes('Informacion de tu Cuenta')],
+  [emailTypes.CASH_WITHDRAWAL, (rawHtml) => rawHtml.includes('RETIRO DE EFECTIVO')],
+  [emailTypes.CHARGE, (rawHtml) => rawHtml.includes('COMPRA EN')],
+  [emailTypes.DEPOSIT, (rawHtml => rawHtml.includes('Instrucción de Depósito'))],
+  [emailTypes.FAST_TRANSFER, (rawHtml) => rawHtml.includes('Transferencias Rápidas')],
+  [emailTypes.IDENTIFICATION, (rawHtml) => rawHtml.includes('Menú Telefónico Banorte') && rawHtml.includes('Identificacion')],
+  [emailTypes.LIMIT_MODIFICATION, (rawHtml) => rawHtml.includes('Modificación de monto máximo acumulado por día')],
+  [emailTypes.NIP_CHANGE, (rawHtml) => rawHtml.includes('CAMBIO DE NIP')],
+  [emailTypes.PHONE_RECHARGE, (rawHtml) => rawHtml.includes('Compra de Tiempo Aire')],
+  [emailTypes.SPEI_INCOME, (rawHtml) => rawHtml.includes('SPEI Recibido')]
+];
+
+function getMatches(rawHtml) {
+  return matchers.reduce((acc, [emailType, matcher]) => {
+    if (matcher(rawHtml)) {
+      return [].concat(acc, emailType);
+    }
+
+    return acc;
+  }, []);
+}
+
 function getEmailType(rawHtml) {
-  return null;
+  const matches = getMatches(rawHtml);
+
+  if (matches.length > 1) {
+    throw new Error(`Multiple matches: ${matches.join(', ')}.`);
+  }
+
+  if (matches.length === 0) {
+    return null;
+  }
+
+  return matches[0];
 }
 
 function scrapeBanorteEmail(rawHtml) {
@@ -10,25 +52,25 @@ function scrapeBanorteEmail(rawHtml) {
 
   switch (emailType) {
     case emailTypes.ACCOUNT_INFO:
-      return scrapers.scrapeAccountInfoEmail(rawHtml);
+      return scrapeAccountInfoEmail(rawHtml);
     case emailTypes.CASH_WITHDRAWAL:
-      return scrapers.scrapeCashWithdrawalEmail(rawHtml);
+      return scrapeCashWithdrawalEmail(rawHtml);
     case emailTypes.CHARGE:
-      return scrapers.scrapeChargeEmail(rawHtml);
+      return scrapeChargeEmail(rawHtml);
     case emailTypes.DEPOSIT:
-      return scrapers.scrapeDepositEmail(rawHtml);
+      return scrapeDepositEmail(rawHtml);
     case emailTypes.FAST_TRANSFER:
-      return scrapers.scrapeFastTransferEmail(rawHtml);
+      return scrapeFastTransferEmail(rawHtml);
     case emailTypes.IDENTIFICATION:
-      return scrapers.scrapeIdentificationEmail(rawHtml);
+      return scrapeIdentificationEmail(rawHtml);
     case emailTypes.LIMIT_MODIFICATION:
-      return scrapers.scrapeLimitModificationEmail(rawHtml);
+      return scrapeLimitModificationEmail(rawHtml);
     case emailTypes.NIP_CHANGE:
-      return scrapers.scrapeNipChangeEmail(rawHtml);
+      return scrapeNipChangeEmail(rawHtml);
     case emailTypes.PHONE_RECHARGE:
-      return scrapers.scrapePhoneRechargeEmail(rawHtml);
+      return scrapePhoneRechargeEmail(rawHtml);
     case emailTypes.SPEI_INCOME:
-      return scrapers.scrapeSpeiIncomeEmail(rawHtml);
+      return scrapeSpeiIncomeEmail(rawHtml);
     default:
       throw new Error('Scraper not implemented.');
   }
