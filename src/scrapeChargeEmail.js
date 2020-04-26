@@ -12,7 +12,7 @@ function scrapeChargeEmail(fields) {
     applicationDate: fields[8],
     amount: extractAmount(fields[12]),
     channel: {
-      emailType: fields[16]
+      type: fields[16]
     }
   };
 }

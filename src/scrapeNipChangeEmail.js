@@ -9,7 +9,7 @@ function scrapeNipChangeEmail(fields) {
     note: fields[12],
     operationDate: fields[4],
     channel: {
-      movementType: fields[14]
+      type: fields[14]
     }
   };
 }

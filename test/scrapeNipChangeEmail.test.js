@@ -12,7 +12,7 @@ test('scrapeNipChangeEmail', () => {
     note: 'CAMBIO DE NIP',
     operationDate: '14/Nov 20:41:13 hrs.',
     channel: {
-      movementType: 'CAJERO AUTOMATICO'
+      type: 'CAJERO AUTOMATICO'
     }
   });
 });
