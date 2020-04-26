@@ -13,6 +13,7 @@ const scrapeDigitalDebitCardActivatedEmail = require('./scrapeDigitalDebitCardAc
 const scrapeDigitalDebitCardBlockedEmail = require('./scrapeDigitalDebitCardBlockedEmail');
 const scrapeDebitCardBlockedEmail = require('./scrapeDebitCardBlockedEmail');
 const scrapeSpeiDevolutionEmail = require('./scrapeSpeiDevolutionEmail');
+const scrapeServicePaymentEmail = require('./scrapeServicePaymentEmail');
 const scrapeBanorteEmail = require('./scrapeBanorteEmail');
 
 module.exports = {
@@ -31,5 +32,6 @@ module.exports = {
   scrapeDigitalDebitCardBlockedEmail,
   scrapeDebitCardBlockedEmail,
   scrapeSpeiDevolutionEmail,
+  scrapeServicePaymentEmail,
   scrapeBanorteEmail
 };

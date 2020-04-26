@@ -153,6 +153,16 @@ describe('scrapeBanorteEmail', () => {
     });
   });
 
+  it(`should be able to identify and scrape data from a ${emailTypes.SERVICE_PAYMENT} email`, () => {
+    const htmlEmail = fs.readFileSync('./test/emails/service-payment-email.html').toString();
+
+    const actual = scrapeBanorteEmail(htmlEmail);
+
+    expect(actual).toMatchObject({
+      emailType: emailTypes.SERVICE_PAYMENT
+    });
+  });
+
   it('should throw if there are multiple matches', () => {
     const makeActual = () => scrapeBanorteEmail('Multiple matches: CASH_WITHDRAWAL, CHARGE, SPEI_INCOME.');
 
