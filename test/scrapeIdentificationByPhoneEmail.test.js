@@ -10,6 +10,6 @@ test('scrapeIdentificationByPhoneEmail', () => {
     movementType: 'ACCOUNT_OPERATION',
     emailType: 'IDENTIFICATION_BY_PHONE',
     note: 'Identificacion',
-    operationDate: '17/12/2019 13:58',
+    operationDate: '17/12/2019 13:58'
   });
 });
