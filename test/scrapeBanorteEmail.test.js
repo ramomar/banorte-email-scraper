@@ -53,13 +53,13 @@ describe('scrapeBanorteEmail', () => {
     });
   });
 
-  it(`should be able to identify and scrape data from a ${emailTypes.IDENTIFICATION} email`, () => {
-    const htmlEmail = fs.readFileSync('./test/emails/identification-email.html').toString();
+  it(`should be able to identify and scrape data from a ${emailTypes.IDENTIFICATION_BY_PHONE} email`, () => {
+    const htmlEmail = fs.readFileSync('./test/emails/identification-by-phone-email.html').toString();
 
     const actual = scrapeBanorteEmail(htmlEmail);
 
     expect(actual).toMatchObject({
-      emailType: emailTypes.IDENTIFICATION
+      emailType: emailTypes.IDENTIFICATION_BY_PHONE
     });
   });
 

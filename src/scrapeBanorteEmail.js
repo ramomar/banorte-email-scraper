@@ -3,7 +3,7 @@ const scrapeNipChangeEmail = require('./scrapeNipChangeEmail');
 const scrapeAccountInfoEmail = require('./scrapeAccountInfoEmail');
 const scrapeCashWithdrawalEmail = require('./scrapeCashWithdrawalEmail');
 const scrapeDepositEmail = require('./scrapeDepositEmail');
-const scrapeIdentificationEmail = require('./scrapeIdentificationEmail');
+const scrapeIdentificationByPhoneEmail = require('./scrapeIdentificationByPhoneEmail');
 const scrapeSpeiIncomeEmail = require('./scrapeSpeiIncomeEmail');
 const scrapeLimitModificationEmail = require('./scrapeLimitModificationEmail');
 const scrapeFastTransferEmail = require('./scrapeFastTransferEmail');
@@ -16,7 +16,7 @@ const matchers = [
   [emailTypes.CHARGE, (rawHtml) => rawHtml.includes('COMPRA EN')],
   [emailTypes.DEPOSIT, (rawHtml => rawHtml.includes('Instrucción de Depósito'))],
   [emailTypes.FAST_TRANSFER, (rawHtml) => rawHtml.includes('Transferencias Rápidas')],
-  [emailTypes.IDENTIFICATION, (rawHtml) => rawHtml.includes('Menú Telefónico Banorte') && rawHtml.includes('Identificacion')],
+  [emailTypes.IDENTIFICATION_BY_PHONE, (rawHtml) => rawHtml.includes('Menú Telefónico Banorte') && rawHtml.includes('Identificacion')],
   [emailTypes.LIMIT_MODIFICATION, (rawHtml) => rawHtml.includes('Modificación de monto máximo acumulado por día')],
   [emailTypes.NIP_CHANGE, (rawHtml) => rawHtml.includes('CAMBIO DE NIP')],
   [emailTypes.PHONE_RECHARGE, (rawHtml) => rawHtml.includes('Compra de Tiempo Aire')],
@@ -61,8 +61,8 @@ function scrapeBanorteEmail(rawHtml) {
       return scrapeDepositEmail(rawHtml);
     case emailTypes.FAST_TRANSFER:
       return scrapeFastTransferEmail(rawHtml);
-    case emailTypes.IDENTIFICATION:
-      return scrapeIdentificationEmail(rawHtml);
+    case emailTypes.IDENTIFICATION_BY_PHONE:
+      return scrapeIdentificationByPhoneEmail(rawHtml);
     case emailTypes.LIMIT_MODIFICATION:
       return scrapeLimitModificationEmail(rawHtml);
     case emailTypes.NIP_CHANGE:

@@ -3,7 +3,7 @@ const scrapeNipChangeEmail = require('./scrapeNipChangeEmail');
 const scrapeAccountInfoEmail = require('./scrapeAccountInfoEmail');
 const scrapeCashWithdrawalEmail = require('./scrapeCashWithdrawalEmail');
 const scrapeDepositEmail = require('./scrapeDepositEmail');
-const scrapeIdentificationEmail = require('./scrapeIdentificationEmail');
+const scrapeIdentificationByPhoneEmail = require('./scrapeIdentificationByPhoneEmail');
 const scrapeSpeiIncomeEmail = require('./scrapeSpeiIncomeEmail');
 const scrapeLimitModificationEmail = require('./scrapeLimitModificationEmail');
 const scrapeFastTransferEmail = require('./scrapeFastTransferEmail');
@@ -16,7 +16,7 @@ module.exports = {
   scrapeAccountInfoEmail,
   scrapeCashWithdrawalEmail,
   scrapeDepositEmail,
-  scrapeIdentificationEmail,
+  scrapeIdentificationByPhoneEmail,
   scrapeSpeiIncomeEmail,
   scrapeLimitModificationEmail,
   scrapeFastTransferEmail,
