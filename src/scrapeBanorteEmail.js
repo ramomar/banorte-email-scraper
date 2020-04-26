@@ -14,6 +14,7 @@ const scrapeDigitalDebitCardBlockedEmail = require('./scrapeDigitalDebitCardBloc
 const scrapeDebitCardBlockedEmail = require('./scrapeDebitCardBlockedEmail');
 const scrapeSpeiDevolutionEmail = require('./scrapeSpeiDevolutionEmail');
 const scrapeServicePaymentEmail = require('./scrapeServicePaymentEmail');
+const scrapeCreditCardPaymentOtherBanksEmail = require('./scrapeCreditCardPaymentOtherBanksEmail');
 const emailTypes = require('./emailTypes');
 
 const scrapers = Object.fromEntries([
@@ -32,7 +33,8 @@ const scrapers = Object.fromEntries([
   [emailTypes.DIGITAL_DEBIT_CARD_BLOCKED, scrapeDigitalDebitCardBlockedEmail],
   [emailTypes.DEBIT_CARD_BLOCKED, scrapeDebitCardBlockedEmail],
   [emailTypes.SPEI_DEVOLUTION, scrapeSpeiDevolutionEmail],
-  [emailTypes.SERVICE_PAYMENT, scrapeServicePaymentEmail]
+  [emailTypes.SERVICE_PAYMENT, scrapeServicePaymentEmail],
+  [emailTypes.CREDIT_CARD_PAYMENT_OTHER_BANKS, scrapeCreditCardPaymentOtherBanksEmail]
 ]);
 
 const matchers = [
@@ -51,7 +53,8 @@ const matchers = [
   [emailTypes.DIGITAL_DEBIT_CARD_BLOCKED, (rawHtml) => rawHtml.includes('Bloqueo de Tarjeta Digital de Débito')],
   [emailTypes.DEBIT_CARD_BLOCKED, (rawHtml) => rawHtml.includes('Bloqueo de Tarjeta de Débito')],
   [emailTypes.SPEI_DEVOLUTION, (rawHtml) => rawHtml.includes('SPEI') && (rawHtml.includes('Devolucion') || rawHtml.includes('Extemporanea'))],
-  [emailTypes.SERVICE_PAYMENT, (rawHtml) => rawHtml.includes('PAGO DE SERVICIOS')]
+  [emailTypes.SERVICE_PAYMENT, (rawHtml) => rawHtml.includes('PAGO DE SERVICIOS')],
+  [emailTypes.CREDIT_CARD_PAYMENT_OTHER_BANKS, (rawHtml) => rawHtml.includes('Pago de Tarjeta de Crédito Otros Bancos')]
 ];
 
 function getMatches(rawHtml) {
