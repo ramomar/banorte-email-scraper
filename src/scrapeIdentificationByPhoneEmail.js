@@ -2,7 +2,7 @@ const makeBanorteEmailScraper = require('./makeBanorteEmailScraper');
 const movementTypes = require('./movementTypes');
 const emailTypes = require('./emailTypes');
 
-function scrapePhoneIdentificationEmail(fields) {
+function scrapeIdentificationByPhoneEmail(fields) {
   return {
     movementType: movementTypes.ACCOUNT_OPERATION,
     emailType: emailTypes.IDENTIFICATION_BY_PHONE,
@@ -11,4 +11,4 @@ function scrapePhoneIdentificationEmail(fields) {
   };
 }
 
-module.exports = makeBanorteEmailScraper(scrapePhoneIdentificationEmail);
+module.exports = makeBanorteEmailScraper(scrapeIdentificationByPhoneEmail);
