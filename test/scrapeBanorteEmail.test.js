@@ -103,43 +103,43 @@ describe('scrapeBanorteEmail', () => {
     });
   });
 
-  it(`should be able to identify and scrape data from a ${emailTypes.CANCEL_DIGITAL_DEBIT_CARD} email`, () => {
-    const htmlEmail = fs.readFileSync('./test/emails/cancel-digital-debit-card-email.html').toString();
+  it(`should be able to identify and scrape data from a ${emailTypes.DIGITAL_DEBIT_CARD_CANCELLED} email`, () => {
+    const htmlEmail = fs.readFileSync('./test/emails/digital-debit-card-cancelled-email.html').toString();
 
     const actual = scrapeBanorteEmail(htmlEmail);
 
     expect(actual).toMatchObject({
-      emailType: emailTypes.CANCEL_DIGITAL_DEBIT_CARD
+      emailType: emailTypes.DIGITAL_DEBIT_CARD_CANCELLED
     });
   });
 
-  it(`should be able to identify and scrape data from a ${emailTypes.ACTIVATE_DIGITAL_DEBIT_CARD} email`, () => {
-    const htmlEmail = fs.readFileSync('./test/emails/activate-digital-debit-card-email.html').toString();
+  it(`should be able to identify and scrape data from a ${emailTypes.DIGITAL_DEBIT_CARD_ACTIVATED} email`, () => {
+    const htmlEmail = fs.readFileSync('./test/emails/digital-debit-card-activated-email.html').toString();
 
     const actual = scrapeBanorteEmail(htmlEmail);
 
     expect(actual).toMatchObject({
-      emailType: emailTypes.ACTIVATE_DIGITAL_DEBIT_CARD
+      emailType: emailTypes.DIGITAL_DEBIT_CARD_ACTIVATED
     });
   });
 
-  it(`should be able to identify and scrape data from a ${emailTypes.BLOCK_DIGITAL_DEBIT_CARD} email`, () => {
-    const htmlEmail = fs.readFileSync('./test/emails/block-digital-debit-card-email.html').toString();
+  it(`should be able to identify and scrape data from a ${emailTypes.DIGITAL_DEBIT_CARD_BLOCKED} email`, () => {
+    const htmlEmail = fs.readFileSync('./test/emails/digital-debit-card-blocked-email.html').toString();
 
     const actual = scrapeBanorteEmail(htmlEmail);
 
     expect(actual).toMatchObject({
-      emailType: emailTypes.BLOCK_DIGITAL_DEBIT_CARD
+      emailType: emailTypes.DIGITAL_DEBIT_CARD_BLOCKED
     });
   });
 
-  it(`should be able to identify and scrape data from a ${emailTypes.BLOCK_DEBIT_CARD} email`, () => {
-    const htmlEmail = fs.readFileSync('./test/emails/block-debit-card-email.html').toString();
+  it(`should be able to identify and scrape data from a ${emailTypes.DEBIT_CARD_BLOCKED} email`, () => {
+    const htmlEmail = fs.readFileSync('./test/emails/debit-card-blocked-email.html').toString();
 
     const actual = scrapeBanorteEmail(htmlEmail);
 
     expect(actual).toMatchObject({
-      emailType: emailTypes.BLOCK_DEBIT_CARD
+      emailType: emailTypes.DEBIT_CARD_BLOCKED
     });
   });
 

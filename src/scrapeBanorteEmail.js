@@ -8,10 +8,10 @@ const scrapeSpeiIncomeEmail = require('./scrapeSpeiIncomeEmail');
 const scrapeLimitModificationEmail = require('./scrapeLimitModificationEmail');
 const scrapeFastTransferEmail = require('./scrapeFastTransferEmail');
 const scrapePhoneRechargeEmail = require('./scrapePhoneRechargeEmail');
-const scrapeCancelDigitalDebitCardEmail = require('./scrapeCancelDigitalDebitCardEmail');
-const scrapeActivateDigitalDebitCardEmail = require('./scrapeActivateDigitalDebitCardEmail');
-const scrapeBlockDigitalDebitCardEmail = require('./scrapeBlockDigitalDebitCardEmail');
-const scrapeBlockDebitCardEmail = require('./scrapeBlockDebitCardEmail');
+const scrapeDigitalDebitCardCancelledEmail = require('./scrapeDigitalDebitCardCancelledEmail');
+const scrapeDigitalDebitCardActivatedEmail = require('./scrapeDigitalDebitCardActivatedEmail');
+const scrapeDigitalDebitCardBlockedEmail = require('./scrapeDigitalDebitCardBlockedEmail');
+const scrapeDebitCardBlockedEmail = require('./scrapeDebitCardBlockedEmail');
 const emailTypes = require('./emailTypes');
 
 const scrapers = Object.fromEntries([
@@ -25,10 +25,10 @@ const scrapers = Object.fromEntries([
   [emailTypes.NIP_CHANGE, scrapeNipChangeEmail],
   [emailTypes.PHONE_RECHARGE, scrapePhoneRechargeEmail],
   [emailTypes.SPEI_INCOME, scrapeSpeiIncomeEmail],
-  [emailTypes.CANCEL_DIGITAL_DEBIT_CARD, scrapeCancelDigitalDebitCardEmail],
-  [emailTypes.ACTIVATE_DIGITAL_DEBIT_CARD, scrapeActivateDigitalDebitCardEmail],
-  [emailTypes.BLOCK_DIGITAL_DEBIT_CARD, scrapeBlockDigitalDebitCardEmail],
-  [emailTypes.BLOCK_DEBIT_CARD, scrapeBlockDebitCardEmail]
+  [emailTypes.DIGITAL_DEBIT_CARD_CANCELLED, scrapeDigitalDebitCardCancelledEmail],
+  [emailTypes.DIGITAL_DEBIT_CARD_ACTIVATED, scrapeDigitalDebitCardActivatedEmail],
+  [emailTypes.DIGITAL_DEBIT_CARD_BLOCKED, scrapeDigitalDebitCardBlockedEmail],
+  [emailTypes.DEBIT_CARD_BLOCKED, scrapeDebitCardBlockedEmail]
 ]);
 
 const matchers = [
@@ -42,10 +42,10 @@ const matchers = [
   [emailTypes.NIP_CHANGE, (rawHtml) => rawHtml.includes('CAMBIO DE NIP')],
   [emailTypes.PHONE_RECHARGE, (rawHtml) => rawHtml.includes('Compra de Tiempo Aire')],
   [emailTypes.SPEI_INCOME, (rawHtml) => rawHtml.includes('SPEI Recibido')],
-  [emailTypes.CANCEL_DIGITAL_DEBIT_CARD, (rawHtml) => rawHtml.includes('Cancelación de Tarjeta Digital de Débito')],
-  [emailTypes.ACTIVATE_DIGITAL_DEBIT_CARD, (rawHtml) => rawHtml.includes('Activación de Tarjeta Digital asociada a tu Cuenta de Débito')],
-  [emailTypes.BLOCK_DIGITAL_DEBIT_CARD, (rawHtml) => rawHtml.includes('Bloqueo de Tarjeta Digital de Débito')],
-  [emailTypes.BLOCK_DEBIT_CARD, (rawHtml) => rawHtml.includes('Bloqueo de Tarjeta de Débito')]
+  [emailTypes.DIGITAL_DEBIT_CARD_CANCELLED, (rawHtml) => rawHtml.includes('Cancelación de Tarjeta Digital de Débito')],
+  [emailTypes.DIGITAL_DEBIT_CARD_ACTIVATED, (rawHtml) => rawHtml.includes('Activación de Tarjeta Digital asociada a tu Cuenta de Débito')],
+  [emailTypes.DIGITAL_DEBIT_CARD_BLOCKED, (rawHtml) => rawHtml.includes('Bloqueo de Tarjeta Digital de Débito')],
+  [emailTypes.DEBIT_CARD_BLOCKED, (rawHtml) => rawHtml.includes('Bloqueo de Tarjeta de Débito')]
 ];
 
 function getMatches(rawHtml) {
