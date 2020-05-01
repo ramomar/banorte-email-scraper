@@ -8,7 +8,7 @@ function scrapeCashWithdrawalAltEmail(fields) {
     movementType: movementTypes.EXPENSE,
     emailType: emailTypes.CASH_WITHDRAWAL_ALT,
     note: fields[4],
-    operationDate: fields[6],
+    operationDate: fields[6].replace(/\s+/g, ' '),
     applicationDate: fields[8],
     channel: {
       type: fields[18]
