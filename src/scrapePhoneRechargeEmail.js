@@ -8,7 +8,7 @@ function scrapePhoneRechargeEmail(fields) {
     movementType: movementTypes.EXPENSE,
     emailType: emailTypes.PHONE_RECHARGE,
     note: fields[4],
-    operationDate: `${fields[6]} ${fields[8]}`,
+    operationDate: `${fields[6]} ${fields[8]}`,
     amount: extractAmount(fields[18]),
     phone: /\d+/.exec(fields[14])[0]
   };

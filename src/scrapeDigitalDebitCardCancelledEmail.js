@@ -7,7 +7,7 @@ function scrapeDigitalDebitCardCancelledEmail(fields) {
     movementType: movementTypes.ACCOUNT_OPERATION,
     emailType: emailTypes.DIGITAL_DEBIT_CARD_CANCELLED,
     note: `${fields[5]} | ${fields[11]}`,
-    operationDate: `${fields[7]} ${fields[9]}`
+    operationDate: `${fields[7]} ${fields[9]}`
   };
 }
 

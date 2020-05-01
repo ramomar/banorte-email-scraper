@@ -4,7 +4,9 @@
   "description": "A package for scraping banorte emails.",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
   },
   "keywords": [
     "banorte",
@@ -14,9 +16,11 @@
   "author": "ramomar",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^6.8.0",
     "jest": "^25.3.0"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3"
+    "cheerio": "^1.0.0-rc.3",
+    "global": "^4.4.0"
   }
 }
