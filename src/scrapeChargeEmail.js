@@ -8,7 +8,7 @@ function scrapeChargeEmail(fields) {
     movementType: movementTypes.EXPENSE,
     emailType: emailTypes.CHARGE,
     note: fields[4],
-    operationDate: fields[6],
+    operationDate: fields[6].replace(/\s+/g, ' '),
     applicationDate: fields[8],
     amount: extractAmount(fields[12]),
     channel: {
