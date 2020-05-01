@@ -10,7 +10,7 @@ test('scrapePhoneRechargeEmail', () => {
     movementType: 'EXPENSE',
     emailType: 'PHONE_RECHARGE',
     note: 'Compra de Tiempo Aire/Paquetes Sin Límite',
-    operationDate: '01/Oct/2019 15:08:52 horas',
+    operationDate: '01/Oct/2019 15:08:52 horas',
     amount: '200.00',
     phone: '0000000000'
   });

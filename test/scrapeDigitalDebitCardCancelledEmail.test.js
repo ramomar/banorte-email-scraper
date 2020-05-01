@@ -10,6 +10,6 @@ test('scrapeDigitalDebitCardCancelledEmail', () => {
     movementType: 'ACCOUNT_OPERATION',
     emailType: 'DIGITAL_DEBIT_CARD_CANCELLED',
     note: 'Cancelación de Tarjeta Digital de Débito | CUENTA ENLACE PERSONAL ****0000',
-    operationDate: '25/Ago/2019 13:07:36 horas'
+    operationDate: '25/Ago/2019 13:07:36 horas'
   });
 });
