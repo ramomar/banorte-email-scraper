@@ -53,8 +53,18 @@ describe('scrapeBanorteEmail', () => {
     });
   });
 
-  it(`should be able to identify and scrape data from a ${emailTypes.FAST_TRANSFER} email`, () => {
-    const htmlEmail = fs.readFileSync('./test/emails/fast-transfer-email.html').toString();
+  it(`should be able to identify and scrape data from a ${emailTypes.FAST_TRANSFER} email (banorte)`, () => {
+    const htmlEmail = fs.readFileSync('./test/emails/fast-transfer-banorte-email.html').toString();
+
+    const actual = scrapeBanorteEmail(htmlEmail);
+
+    expect(actual).toMatchObject({
+      emailType: emailTypes.FAST_TRANSFER
+    });
+  });
+
+  it(`should be able to identify and scrape data from a ${emailTypes.FAST_TRANSFER} email (other banks)`, () => {
+    const htmlEmail = fs.readFileSync('./test/emails/fast-transfer-other-banks-email.html').toString();
 
     const actual = scrapeBanorteEmail(htmlEmail);
 
