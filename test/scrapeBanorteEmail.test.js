@@ -23,6 +23,16 @@ describe('scrapeBanorteEmail', () => {
     });
   });
 
+  it(`should be able to identify and scrape data from a ${emailTypes.CASH_WITHDRAWAL_ALT} email`, () => {
+    const htmlEmail = fs.readFileSync('./test/emails/cash-withdrawal-alt-email.html').toString();
+
+    const actual = scrapeBanorteEmail(htmlEmail);
+
+    expect(actual).toMatchObject({
+      emailType: emailTypes.CASH_WITHDRAWAL_ALT
+    });
+  });
+
   it(`should be able to identify and scrape data from a ${emailTypes.CHARGE} email`, () => {
     const htmlEmail = fs.readFileSync('./test/emails/charge-email.html').toString();
 

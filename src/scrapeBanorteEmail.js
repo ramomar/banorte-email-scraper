@@ -2,6 +2,7 @@ const scrapeChargeEmail = require('./scrapeChargeEmail');
 const scrapeNipChangeEmail = require('./scrapeNipChangeEmail');
 const scrapeAccountInfoEmail = require('./scrapeAccountInfoEmail');
 const scrapeCashWithdrawalEmail = require('./scrapeCashWithdrawalEmail');
+const scrapeCashWithdrawalAltEmail = require('./scrapeCashWithdrawalAltEmail');
 const scrapeDepositEmail = require('./scrapeDepositEmail');
 const scrapeIdentificationByPhoneEmail = require('./scrapeIdentificationByPhoneEmail');
 const scrapeSpeiIncomeEmail = require('./scrapeSpeiIncomeEmail');
@@ -20,6 +21,7 @@ const emailTypes = require('./emailTypes');
 const scrapers = Object.fromEntries([
   [emailTypes.ACCOUNT_INFO, scrapeAccountInfoEmail],
   [emailTypes.CASH_WITHDRAWAL, scrapeCashWithdrawalEmail],
+  [emailTypes.CASH_WITHDRAWAL_ALT, scrapeCashWithdrawalAltEmail],
   [emailTypes.CHARGE, scrapeChargeEmail],
   [emailTypes.DEPOSIT, scrapeDepositEmail],
   [emailTypes.FAST_TRANSFER, scrapeFastTransferEmail],
@@ -40,6 +42,7 @@ const scrapers = Object.fromEntries([
 const matchers = [
   [emailTypes.ACCOUNT_INFO, (rawHtml) => rawHtml.includes('Informacion de tu Cuenta')],
   [emailTypes.CASH_WITHDRAWAL, (rawHtml) => rawHtml.includes('RETIRO DE EFECTIVO')],
+  [emailTypes.CASH_WITHDRAWAL_ALT, (rawHtml) => rawHtml.includes('DISPOSICION DE EFECTIVO')],
   [emailTypes.CHARGE, (rawHtml) => rawHtml.includes('COMPRA EN')],
   [emailTypes.DEPOSIT, (rawHtml => rawHtml.includes('Instrucción de Depósito'))],
   [emailTypes.FAST_TRANSFER, (rawHtml) => rawHtml.includes('Transferencias Rápidas')],
