@@ -1,7 +1,7 @@
 const fs = require('fs');
 const scrapeCreditCardPaymentOtherBanksEmail = require('../src/scrapeCreditCardPaymentOtherBanksEmail');
 
-test('scrapeCreditCardPaymentOtherBanksEmail', async () => {
+test('scrapeCreditCardPaymentOtherBanksEmail', () => {
   const htmlEmail = fs.readFileSync('./test/emails/credit-card-payment-other-banks-email.html');
 
   const actual = scrapeCreditCardPaymentOtherBanksEmail(htmlEmail);
