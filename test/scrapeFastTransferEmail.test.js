@@ -8,7 +8,7 @@ describe('scrapeFastTransferEmail', () => {
     const actual = scrapeFastTransferEmail(htmlEmail);
 
     expect(actual).toStrictEqual({
-      movementType: 'EXPENSE',
+      recordType: 'EXPENSE',
       emailType: 'FAST_TRANSFER',
       note: 'Transferencias Rápidas | Cosas | beneficiario@mail.com',
       operationDate: '21/Oct/2019 11:23:02 horas',
@@ -32,7 +32,7 @@ describe('scrapeFastTransferEmail', () => {
     const actual = scrapeFastTransferEmail(htmlEmail);
 
     expect(actual).toStrictEqual({
-      movementType: 'EXPENSE',
+      recordType: 'EXPENSE',
       emailType: 'FAST_TRANSFER',
       note: 'Transferencias Rápidas | Open source | hola@github.com',
       operationDate: '03/Ago/2019 11:13:14 horas',

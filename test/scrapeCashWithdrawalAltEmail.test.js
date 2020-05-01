@@ -7,7 +7,7 @@ test('scrapeCashWithdrawalAltEmail', () => {
   const actual = scrapeCashWithdrawalAltEmail(htmlEmail);
 
   expect(actual).toStrictEqual({
-    movementType: 'EXPENSE',
+    recordType: 'EXPENSE',
     emailType: 'CASH_WITHDRAWAL_ALT',
     note: 'DISPOSICION DE EFECTIVO',
     operationDate: '14/May 20:15:31 hrs.',

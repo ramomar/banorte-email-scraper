@@ -7,7 +7,7 @@ test('scrapeAccountInfoEmail', () => {
   const actual = scrapeAccountInfoEmail(htmlEmail);
 
   expect(actual).toStrictEqual({
-    movementType: 'ACCOUNT_OPERATION',
+    recordType: 'ACCOUNT_OPERATION',
     emailType: 'ACCOUNT_INFO',
     note: 'Informacion de tu Cuenta',
     operationDate: '17/12/2019 13:58'

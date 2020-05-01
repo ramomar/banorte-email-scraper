@@ -1,10 +1,10 @@
 const makeBanorteEmailScraper = require('./makeBanorteEmailScraper');
 const emailTypes = require('./emailTypes');
-const movementTypes = require('./movementTypes');
+const recordTypes = require('./recordTypes');
 
 function scrapeAccountInfoEmail(fields) {
   return {
-    movementType: movementTypes.ACCOUNT_OPERATION,
+    recordType: recordTypes.ACCOUNT_OPERATION,
     emailType: emailTypes.ACCOUNT_INFO,
     note: fields[5],
     operationDate: fields[15]

@@ -7,7 +7,7 @@ test('scrapeServicePaymentEmail', () => {
   const actual = scrapeServicePaymentEmail(htmlEmail);
 
   expect(actual).toStrictEqual({
-    movementType: 'EXPENSE',
+    recordType: 'EXPENSE',
     emailType: 'SERVICE_PAYMENT',
     note: 'PAGO DE SERVICIOS',
     amount: '4000.00',

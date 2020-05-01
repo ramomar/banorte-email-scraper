@@ -1,11 +1,11 @@
 const makeBanorteEmailScraper = require('./makeBanorteEmailScraper');
 const emailTypes = require('./emailTypes');
-const movementTypes = require('./movementTypes');
+const recordTypes = require('./recordTypes');
 const extractAmount = require('./extractAmount');
 
 function scrapeFastTransferBanorteEmail(fields) {
   return {
-    movementType: movementTypes.EXPENSE,
+    recordType: recordTypes.EXPENSE,
     emailType: emailTypes.FAST_TRANSFER,
     note: [fields[4], fields[28], fields[20]].join(' | '),
     operationDate: `${fields[6]} ${fields[8]}`,
@@ -25,7 +25,7 @@ function scrapeFastTransferBanorteEmail(fields) {
 
 function scrapeFastTransferOtherBanksEmail(fields) {
   return {
-    movementType: movementTypes.EXPENSE,
+    recordType: recordTypes.EXPENSE,
     emailType: emailTypes.FAST_TRANSFER,
     note: [fields[4], fields[32], fields[24]].join(' | '),
     operationDate: `${fields[6]} ${fields[8]}`,

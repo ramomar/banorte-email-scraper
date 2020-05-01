@@ -1,6 +1,6 @@
 const cheerio = require('cheerio');
 const emailTypes = require('./emailTypes');
-const movementTypes = require('./movementTypes');
+const recordTypes = require('./recordTypes');
 
 function scrapeSpeiDevolutionEmail(fields) {
   const sanitizedNote = fields.slice(7, 10)
@@ -11,7 +11,7 @@ function scrapeSpeiDevolutionEmail(fields) {
   const operationData = sanitizedNote.split(' ');
 
   return {
-    movementType: movementTypes.INCOME,
+    recordType: recordTypes.INCOME,
     emailType: emailTypes.SPEI_DEVOLUTION,
     note: sanitizedNote,
     operationDate: `${operationData[12]} ${operationData[15]}`,

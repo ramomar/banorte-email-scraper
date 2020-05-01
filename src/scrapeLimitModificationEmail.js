@@ -1,10 +1,10 @@
 const makeBanorteEmailScraper = require('./makeBanorteEmailScraper');
-const movementTypes = require('./movementTypes');
+const recordTypes = require('./recordTypes');
 const emailTypes = require('./emailTypes');
 
 function scrapeLimitModificationEmail(fields) {
   return {
-    movementType: movementTypes.ACCOUNT_OPERATION,
+    recordType: recordTypes.ACCOUNT_OPERATION,
     emailType: emailTypes.LIMIT_MODIFICATION,
     note: `${fields[5]} | Monto máximo acumulado por día: ${fields[13]}`,
     operationDate: `${fields[7]} ${fields[9]}`
