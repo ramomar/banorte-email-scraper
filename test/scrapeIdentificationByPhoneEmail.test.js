@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { scrapeIdentificationByPhoneEmail } = require('../src');
+const scrapeIdentificationByPhoneEmail = require('../src/scrapeIdentificationByPhoneEmail');
 
 test('scrapeIdentificationByPhoneEmail', () => {
   const htmlEmail = fs.readFileSync('./test/emails/identification-by-phone-email.html');

@@ -1,3 +1,4 @@
+const emailTypes = require('./emailTypes');
 const scrapeChargeEmail = require('./scrapeChargeEmail');
 const scrapeNipChangeEmail = require('./scrapeNipChangeEmail');
 const scrapeAccountInfoEmail = require('./scrapeAccountInfoEmail');
@@ -16,7 +17,6 @@ const scrapeDebitCardBlockedEmail = require('./scrapeDebitCardBlockedEmail');
 const scrapeSpeiDevolutionEmail = require('./scrapeSpeiDevolutionEmail');
 const scrapeServicePaymentEmail = require('./scrapeServicePaymentEmail');
 const scrapeCreditCardPaymentOtherBanksEmail = require('./scrapeCreditCardPaymentOtherBanksEmail');
-const emailTypes = require('./emailTypes');
 
 const scrapers = Object.fromEntries([
   [emailTypes.ACCOUNT_INFO, scrapeAccountInfoEmail],

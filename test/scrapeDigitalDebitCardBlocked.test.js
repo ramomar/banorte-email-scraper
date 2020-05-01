@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { scrapeDigitalDebitCardBlockedEmail } = require('../src');
+const scrapeDigitalDebitCardBlockedEmail = require('../src/scrapeDigitalDebitCardBlockedEmail');
 
 test('scrapeDigitalDebitCardBlockedEmail', () => {
   const htmlEmail = fs.readFileSync('./test/emails/digital-debit-card-blocked-email.html');

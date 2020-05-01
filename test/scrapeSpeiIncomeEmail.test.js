@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { scrapeSpeiIncomeEmail } = require('../src');
+const scrapeSpeiIncomeEmail = require('../src/scrapeSpeiIncomeEmail');
 
 test('scrapeSpeiIncomeEmail', () => {
   const htmlEmail = fs.readFileSync('./test/emails/spei-income-email.html');

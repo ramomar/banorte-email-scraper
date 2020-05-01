@@ -1,6 +1,6 @@
 const fs = require('fs');
 const emailTypes = require('../src/emailTypes');
-const { scrapeBanorteEmail } = require('../src');
+const scrapeBanorteEmail = require('../src');
 
 describe('scrapeBanorteEmail', () => {
   it(`should be able to identify and scrape data from a ${emailTypes.ACCOUNT_INFO} email`, () => {

@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { scrapeLimitModificationEmail } = require('../src');
+const scrapeLimitModificationEmail = require('../src/scrapeLimitModificationEmail');
 
 test('scrapeLimitModificationEmail', () => {
   const htmlEmail = fs.readFileSync('./test/emails/limit-modification-email.html');

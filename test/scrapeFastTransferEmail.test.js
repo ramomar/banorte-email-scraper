@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { scrapeFastTransferEmail } = require('../src');
+const scrapeFastTransferEmail = require('../src/scrapeFastTransferEmail');
 
 test('scrapeFastTransferEmail', async () => {
   const htmlEmail = fs.readFileSync('./test/emails/fast-transfer-email.html');
