@@ -13,6 +13,14 @@ describe('scrapeFastTransferEmail', () => {
       note: 'Transferencias Rápidas | Cosas | beneficiario@mail.com',
       operationDate: '21/Oct/2019 11:23:02 horas',
       amount: '600.00',
+      extraAmounts: [
+        {
+          fee: {
+            amount: '0.00',
+            tax: '0.00'
+          }
+        }
+      ],
       bank: 'Banorte',
       receiver: 'No capturado'
     });
@@ -29,6 +37,14 @@ describe('scrapeFastTransferEmail', () => {
       note: 'Transferencias Rápidas | Open source | hola@github.com',
       operationDate: '03/Ago/2019 11:13:14 horas',
       amount: '806.00',
+      extraAmounts: [
+        {
+          fee: {
+            amount: '3.00',
+            tax: '0.48'
+          }
+        }
+      ],
       bank: 'BBVA BANCOMER',
       receiver: 'GitHub'
     });

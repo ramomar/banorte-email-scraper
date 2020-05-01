@@ -10,6 +10,14 @@ function scrapeCreditCardPaymentOtherBanksEmail(fields) {
     note: [fields[4], fields[18], fields[14]].join(' | '),
     operationDate: `${fields[6]} ${fields[8]}`,
     amount: extractAmount(fields[22]),
+    extraAmounts: [
+      {
+        fee: {
+          amount: extractAmount(fields[26]),
+          tax: extractAmount(fields[28])
+        }
+      }
+    ],
     bank: fields[20],
     receiver: fields[16]
   };
