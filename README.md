@@ -8,7 +8,7 @@ The library includes 18 scrapers collected from different types of emails collec
 
 You can take a look [here](https://github.com/ramomar/banorte-email-scraper/tree/master/test/emails) in order to see which emails have an scraper implemented already.
 
-*The parsing of the dates is up to you due to the weird formats Banorte uses. In my opinion, those dates are not very accurate. I recommend taking a look at the timestamp of the email when it arrived in your inbox, and then comparing the two dates in order to see which one is better for your use case.*
+*The parsing of the dates is up to you due to the weird formats Banorte uses. In my opinion those dates are not very accurate. I recommend taking a look at the timestamp of the email when it arrived in your inbox, and then comparing the two dates in order to see which one is better for your use case.*
 
 ## Usage
 1. Install the package.
