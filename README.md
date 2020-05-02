@@ -31,8 +31,7 @@ console.log(scrapeBanorteEmail(html));
 ### Example output
 
 ```js
-[
-  {
+[{
         recordType: 'EXPENSE',
         emailType: 'CHARGE',
         note: 'COMPRA EN PAYPAL3',
@@ -53,6 +52,21 @@ console.log(scrapeBanorteEmail(html));
             type: 'CAJERO VISA NET'
         },
         amount: '337.88'
+    },
+    {
+        movementType: 'EXPENSE',
+        emailType: 'FAST_TRANSFER',
+        note: 'Transferencias Rápidas | Pago de una cosa',
+        operationDate: '06/Abr/2020 18:49:55 horas',
+        amount: '200.00',
+        extraAmounts: [{
+            fee: {
+                amount: '3.00'.
+                tax: '0.48'
+            }
+        }],
+        bank: 'SCOTIABANK',
+        receiver: 'Alguien'
     }
 ]
 ```
