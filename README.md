@@ -16,8 +16,9 @@ You can take a look [here](https://github.com/ramomar/banorte-email-scraper/tree
 npm install --save git+ssh://git@github.com/ramomar/banorte-email-scraper.git
 ```
 
-2. Import the scraper and use it!
+2. Require the scraper and use it!
 ```js
+const fs = require('fs');
 const scrapeBanorteEmail = require('banorte-email-scraper');
 
 const htmlInBase64 = fs.readFileSync('./banorte-email-in-base-64');
