@@ -22,7 +22,6 @@ const fs = require('fs');
 const scrapeBanorteEmail = require('banorte-email-scraper');
 
 const htmlInBase64 = fs.readFileSync('./banorte-email-in-base-64');
-
 const html = Buffer.from(htmlInBase64, 'base64').toString();
 
 console.log(scrapeBanorteEmail(html));
@@ -31,7 +30,8 @@ console.log(scrapeBanorteEmail(html));
 ### Example output
 
 ```js
-[{
+[
+    {
         recordType: 'EXPENSE',
         emailType: 'CHARGE',
         note: 'COMPRA EN PAYPAL3',
