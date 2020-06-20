@@ -1,4 +1,4 @@
-const cheerio = require('cheerio');
+const makeBanorteSpeiEmailScraper = require('./makeBanorteSpeiEmailScraper');
 const emailTypes = require('./emailTypes');
 const recordTypes = require('./recordTypes');
 
@@ -16,18 +16,6 @@ function scrapeSpeiDevolutionEmail(fields) {
     note: sanitizedNote,
     operationDate: `${operationData[12]} ${operationData[15]}`,
     amount: parseFloat(operationData[9].replace(',', '')).toFixed(2)
-  };
-}
-
-function makeBanorteSpeiEmailScraper(scraper) {
-  return rawHtml => {
-    const $ = cheerio.load(rawHtml);
-
-    const fields = $('p')
-      .map((_, elem) => $(elem).text().trim())
-      .get();
-
-    return scraper(fields);
   };
 }
 
