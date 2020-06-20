@@ -194,9 +194,9 @@ describe('scrapeBanorteEmail', () => {
   });
 
   it('should throw if there are multiple matches', () => {
-    const makeActual = () => scrapeBanorteEmail('Multiple matches: CASH_WITHDRAWAL, CHARGE, SPEI_INCOME.');
+    const makeActual = () => scrapeBanorteEmail('RETIRO DE EFECTIVO DISPOSICION DE EFECTIVO');
 
-    expect(makeActual).toThrow('Scraper not implemented.');
+    expect(makeActual).toThrow('Multiple matches: CASH_WITHDRAWAL, CASH_WITHDRAWAL_ALT.');
   });
 
   it('should throw when a scraper has not been implemented', () => {
