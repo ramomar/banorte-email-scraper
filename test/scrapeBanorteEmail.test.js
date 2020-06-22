@@ -123,13 +123,13 @@ describe('scrapeBanorteEmail', () => {
     });
   });
 
-  it(`should be able to identify and scrape data from a ${emailTypes.DIGITAL_DEBIT_CARD_CANCELLED} email`, () => {
-    const htmlEmail = fs.readFileSync('./test/emails/digital-debit-card-cancelled-email.html').toString();
+  it(`should be able to identify and scrape data from a ${emailTypes.DIGITAL_DEBIT_CARD_CANCELED} email`, () => {
+    const htmlEmail = fs.readFileSync('./test/emails/digital-debit-card-canceled-email.html').toString();
 
     const actual = scrapeBanorteEmail(htmlEmail);
 
     expect(actual).toMatchObject({
-      emailType: emailTypes.DIGITAL_DEBIT_CARD_CANCELLED
+      emailType: emailTypes.DIGITAL_DEBIT_CARD_CANCELED
     });
   });
 

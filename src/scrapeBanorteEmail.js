@@ -10,7 +10,7 @@ const scrapeSpeiIncomeEmail = require('./scrapeSpeiIncomeEmail');
 const scrapeLimitModificationEmail = require('./scrapeLimitModificationEmail');
 const scrapeFastTransferEmail = require('./scrapeFastTransferEmail');
 const scrapePhoneRechargeEmail = require('./scrapePhoneRechargeEmail');
-const scrapeDigitalDebitCardCancelledEmail = require('./scrapeDigitalDebitCardCancelledEmail');
+const scrapeDigitalDebitCardCanceledEmail = require('./scrapeDigitalDebitCardCanceledEmail');
 const scrapeDigitalDebitCardActivatedEmail = require('./scrapeDigitalDebitCardActivatedEmail');
 const scrapeDigitalDebitCardBlockedEmail = require('./scrapeDigitalDebitCardBlockedEmail');
 const scrapeDebitCardBlockedEmail = require('./scrapeDebitCardBlockedEmail');
@@ -30,7 +30,7 @@ const scrapers = Object.fromEntries([
   [emailTypes.NIP_CHANGE, scrapeNipChangeEmail],
   [emailTypes.PHONE_RECHARGE, scrapePhoneRechargeEmail],
   [emailTypes.SPEI_INCOME, scrapeSpeiIncomeEmail],
-  [emailTypes.DIGITAL_DEBIT_CARD_CANCELLED, scrapeDigitalDebitCardCancelledEmail],
+  [emailTypes.DIGITAL_DEBIT_CARD_CANCELED, scrapeDigitalDebitCardCanceledEmail],
   [emailTypes.DIGITAL_DEBIT_CARD_ACTIVATED, scrapeDigitalDebitCardActivatedEmail],
   [emailTypes.DIGITAL_DEBIT_CARD_BLOCKED, scrapeDigitalDebitCardBlockedEmail],
   [emailTypes.DEBIT_CARD_BLOCKED, scrapeDebitCardBlockedEmail],
@@ -51,7 +51,7 @@ const matchers = [
   [emailTypes.NIP_CHANGE, (rawHtml) => rawHtml.includes('CAMBIO DE NIP')],
   [emailTypes.PHONE_RECHARGE, (rawHtml) => rawHtml.includes('Compra de Tiempo Aire')],
   [emailTypes.SPEI_INCOME, (rawHtml) => rawHtml.includes('SPEI Recibido')],
-  [emailTypes.DIGITAL_DEBIT_CARD_CANCELLED, (rawHtml) => rawHtml.includes('Cancelación de Tarjeta Digital de Débito')],
+  [emailTypes.DIGITAL_DEBIT_CARD_CANCELED, (rawHtml) => rawHtml.includes('Cancelación de Tarjeta Digital de Débito')],
   [emailTypes.DIGITAL_DEBIT_CARD_ACTIVATED, (rawHtml) => rawHtml.includes('Activación de Tarjeta Digital asociada a tu Cuenta de Débito')],
   [emailTypes.DIGITAL_DEBIT_CARD_BLOCKED, (rawHtml) => rawHtml.includes('Bloqueo de Tarjeta Digital de Débito')],
   [emailTypes.DEBIT_CARD_BLOCKED, (rawHtml) => rawHtml.includes('Bloqueo de Tarjeta de Débito')],
