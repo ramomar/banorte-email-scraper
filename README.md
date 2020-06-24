@@ -54,7 +54,7 @@ console.log(scrapeBanorteEmail(html));
         amount: '337.88'
     },
     {
-        movementType: 'EXPENSE',
+        recordType: 'EXPENSE',
         emailType: 'FAST_TRANSFER',
         note: 'Transferencias Rápidas | Pago de una cosa',
         operationDate: '06/Abr/2020 18:49:55 horas',
