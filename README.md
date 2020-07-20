@@ -1,5 +1,4 @@
 # banorte-email-scraper
-[![ramomar](https://circleci.com/gh/ramomar/banorte-email-scraper.svg?style=svg)](https://app.circleci.com/pipelines/gh/ramomar/banorte-email-scraper)
 
 A library for scraping transaction emails from Banorte.
 
