@@ -2,6 +2,8 @@
 
 A library for scraping transaction emails from Banorte.
 
+> ⚠️ **This project is no longed mantained, see** [banes](https://github.com/ramomar/banes).
+
 ## Scrapers
 The library includes 18 scrapers collected from different types of emails collected over 1 year period.
 
